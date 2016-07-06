@@ -1,25 +1,25 @@
 'use strict';
 
-module.exports = function(opts) {
-  var express = require('express'), 
-    app = module.exports = express(),
-    compression = require('compression'),
-    session = require('express-session'),
-    Cloudant = require('cloudant'),
-    bodyParser = require('body-parser'),
-    router = require('./lib/routes/index'),
-    async = require('async'),
-    init = require('./lib/init'),
-    events = require('events'),
-    ee = new events.EventEmitter(),
-    auth = require('./lib/auth'),
-    morgan = require('morgan'),
+module.exports = opts => {
+  const express = require('express'), 
+    app = module.exports = express(), 
+    compression = require('compression'), 
+    session = require('express-session'), 
+    Cloudant = require('cloudant'), 
+    bodyParser = require('body-parser'), 
+    router = require('./lib/routes/index'), 
+    async = require('async'), 
+    init = require('./lib/init'), 
+    events = require('events'), 
+    ee = new events.EventEmitter(), 
+    auth = require('./lib/auth'), 
+    morgan = require('morgan'), 
     cors = require('./lib/cors'); 
 
   // Required environment variables
   app.opts = require('./lib/env').getCredentials(opts);
 
-  var cloudant = new Cloudant(app.opts.couchHost),
+  const cloudant = new Cloudant(app.opts.couchHost), 
     dbName = app.dbName = app.opts.databaseName;
 
   app.db = cloudant.db.use(dbName);
@@ -66,12 +66,12 @@ module.exports = function(opts) {
     app.use('/', router);
 
     // Catch unknown paths
-    app.use(function(req, res, next) {
+    app.use((req, res, next) => {
       res.status(400).send({error: 'bad_request', reason: 'unknown path'})
     });
 
     // Error handlers
-    app.use(function(err, req, res, next) {
+    app.use((err, req, res, next) => {
       console.error(err.stack);
       res.status(500).send('Something broke!');
     });
@@ -89,8 +89,8 @@ module.exports = function(opts) {
       auth.init
     ],
 
-    function (err, results) {
-      for (var result in results) {
+    (err, results) => {
+      for (const result in results) {
         if (results[result]) {
           console.log(results[result]);
         }
@@ -111,5 +111,3 @@ module.exports = function(opts) {
 
   return app;
 };
-
-
