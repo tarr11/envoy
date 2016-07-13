@@ -25,7 +25,7 @@
     "test": "bash scripts/run_couchdb_on_travis.sh; npm run mocha"
   },
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^2.0.0",
     "basic-auth": "^1.0.3",
     "body-parser": "^1.14.2",
     "cf-deployment-tracker-client": "^0.1.1",
