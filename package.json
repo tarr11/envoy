@@ -41,7 +41,7 @@
   "devDependencies": {
     "chance": "^1.0.3",
     "istanbul": "^0.4.3",
-    "jshint": "2.9.2",
+    "jshint": "2.9.3",
     "mocha": "3.0.2",
     "pouchdb": "^5.2.1",
     "pouchdb-envoy": "^0.6.0"
