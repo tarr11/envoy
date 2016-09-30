@@ -1,6 +1,6 @@
 {
   "name": "cloudant-envoy",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A mobile backend shim to Cloudant",
   "contributors": [
     "Stefan Kruger <stefan.kruger@gmail.com>",
@@ -30,20 +30,20 @@
     "body-parser": "^1.14.2",
     "cf-deployment-tracker-client": "^0.1.1",
     "cfenv": "^1.0.3",
-    "cloudant": "^1.4.2",
+    "cloudant": "^1.5.0",
     "compression": "^1.6.2",
     "express": "^4.13.3",
     "express-session": "^1.13.0",
     "morgan": "^1.6.1",
-    "request": "^2.72.0",
-    "uuid": "^2.0.2"
+    "request": "^2.75.0",
+    "uuid": "^2.0.3"
   },
   "devDependencies": {
     "chance": "^1.0.3",
     "istanbul": "^0.4.3",
-    "jshint": "2.9.2",
-    "mocha": "3.0.2",
-    "pouchdb": "^6.0.4",
+    "jshint": "2.9.3",
+    "mocha": "3.1.0",
+    "pouchdb": "^6.0.6",
     "pouchdb-envoy": "^0.6.0"
   },
   "repository": {
