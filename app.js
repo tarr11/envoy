@@ -29,17 +29,7 @@ module.exports = function(opts) {
   app.serverURL = app.opts.couchHost;
   app.auth = auth;
 
-  // session support
-  if (opts && opts.sessionHandler) {
-    app.use(opts.sessionHandler)
-  } else {
-    console.log('[OK]  Using default session handler');
-    app.use(session({ 
-      secret: app.metaKey,
-      resave: true,
-      saveUninitialized: true
-    }));
-  }
+
   
   // Setup the logging format
   if (app.opts.logFormat !== 'off') {
@@ -70,6 +60,18 @@ module.exports = function(opts) {
     
     app.use(bodyParser.json({ limit: '50mb'}));
     app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
+
+    // session support
+    if (opts && opts.sessionHandler) {
+      app.use(opts.sessionHandler)
+    } else {
+      console.log('[OK]  Using default session handler');
+      app.use(session({ 
+        secret: app.metaKey,
+        resave: true,
+        saveUninitialized: true
+      }));
+    }
 
     // load the routes
     var router = require('./lib/routes/index');

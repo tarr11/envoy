@@ -88,6 +88,7 @@ After those variables are set, you can start the Envoy server with `npm start`. 
 * ENVOY_ACCESS - which access control plugin to use. One of `default`, `id`, `meta`
 * PRODUCTION - when set to 'true', disables the `POST /_adduser` endpoint
 * ENVOY_STATIC - when set to a full path, this directory is served out as static content from the Envoy express app.
+* ENVOY_USERS_DATABASE_NAME - the name of the database to store users when using the `default` auth plugin. Defaults to `envoyusers`.
 
 ## Using Envoy in your own app
 
@@ -249,7 +250,7 @@ At startup, *Envoy* can load in plugin modules to modify Envoy's behaviour. The 
 
 ### Default auth plugin
 
-The `default` auth plugin uses the `envoyusers` database to store a database of users who are allowed to authenticate. Add a user to your `envoyusers` database with a document like this:
+The `default` auth plugin uses the `envoyusers` database (by default) to store a database of users who are allowed to authenticate. Add a user to your `envoyusers` database with a document like this:
 
 ```js
 {
