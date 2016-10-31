@@ -33,7 +33,7 @@
     "cloudant": "^1.5.0",
     "compression": "^1.6.2",
     "express": "^4.13.3",
-    "express-session": "^1.13.0",
+    "express-session": "^1.14.2",
     "morgan": "^1.6.1",
     "request": "^2.75.0",
     "uuid": "^2.0.3"
