@@ -30,7 +30,7 @@
     "body-parser": "^1.14.2",
     "cf-deployment-tracker-client": "^0.1.1",
     "cfenv": "^1.0.3",
-    "cloudant": "^1.5.0",
+    "cloudant": "^1.5.2",
     "compression": "^1.6.2",
     "express": "^4.13.3",
     "express-session": "^1.13.0",
