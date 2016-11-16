@@ -30,14 +30,21 @@ module.exports = function(opts) {
   app.auth = auth;
 
 
-  
   // Setup the logging format
   if (app.opts.logFormat !== 'off') {
     app.use(morgan(app.opts.logFormat));
   }
 
   function main() {
-    
+
+    // Load custom middleware
+    if (app.opts.middleware.length) {
+      console.log('[OK]  Loading middleware');
+      for(var i = 0; i < app.opts.middleware.length; i++) {
+        app.use(app.opts.middleware[i]);
+      }
+    }
+
     // plug in custom routes
     if (app.opts.router) {
       app.use(app.opts.router);
@@ -53,11 +60,11 @@ module.exports = function(opts) {
     } 
 
     // enable cors
-    app.use(cors());   
+    app.use(cors()); 
     
     // gzip responses
     app.use(compression());
-    
+
     app.use(bodyParser.json({ limit: '50mb'}));
     app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
 
@@ -124,5 +131,3 @@ module.exports = function(opts) {
 
   return app;
 };
-
-
