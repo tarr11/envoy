@@ -179,6 +179,29 @@ var opts = {
 var envoy = require('envoy')(opts);
 ```
 
+### Custom middleware
+
+You can supply your own custom middleware to Envoy
+
+```js
+var myLogger = function (req, res, next) {
+  console.log('LOGGED')
+  next()
+};
+var opts = {
+    databaseName: dbName,
+    port: appEnv.port,
+    logFormat: 'dev',
+    production: true,
+    static: path.join(__dirname, './public'),
+    router: router,
+    middleware: [myLogger]
+};
+var envoy = require('envoy')(opts);
+```
+
+The `middleware` property expects an array of Express middleware functions.
+
 ## Debugging
 
 Debugging messages are controlled by the `DEBUG` environment variable. To see detailed debugging outlining the API calls being made between Envoy and Cloudant then set the `DEBUG` environment variable to `cloudant,nano` e.g

@@ -40,14 +40,9 @@ module.exports = function(opts) {
     // Load custom middleware
     if (app.opts.middleware.length) {
       console.log('[OK]  Loading middleware');
-      for(var i = 0; i < app.opts.middleware.length; i++) {
-        app.use(app.opts.middleware[i]);
-      }
-    }
-
-    // plug in custom routes
-    if (app.opts.router) {
-      app.use(app.opts.router);
+      app.opts.middleware.forEach(function(m) {
+        app.use(m);
+      });
     }
 
     var production = (app.opts.production && app.opts.production === 'true');
@@ -78,6 +73,11 @@ module.exports = function(opts) {
         resave: true,
         saveUninitialized: true
       }));
+    }
+
+    // plug in custom routes
+    if (app.opts.router) {
+      app.use(app.opts.router);
     }
 
     // load the routes
