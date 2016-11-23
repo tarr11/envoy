@@ -239,9 +239,9 @@ Envoy supports a subset of the [CouchDB API](http://docs.couchdb.org/en/1.6.1/ap
 Allows a remote client to either check whether it is logged in or to establish a login session:
 
 ```sh
-// not logged in - Envoy returns 403 response
+# not logged in - Envoy returns 403 response
 > curl https://myenvoy.mybluemix.net/_auth
-// log in - Envoy returns 200 response and saves cookie
+# log in - Envoy returns 200 response and saves cookie
 > curl https://myenvoy.mybluemix.net/_auth --user glynn:password
 {"loggedin":true,"username":"glynn"}
 ```
@@ -259,7 +259,7 @@ Allows a remote client to logout of a session.
 Allows the creation of new Envoy users. Supply a `username` and `password` parameter in a form-encoded post e.g.
 
 ```sh
-curl -X POST -d 'username=rita&password=password' https://myenvoy.mybluemix.net/_adduser
+> curl -X POST -d 'username=rita&password=password' https://myenvoy.mybluemix.net/_adduser
 ```
 
 This API is only for evaluation purposes and should be disabled in production, by setting the `PRODUCTION` environment variable.
@@ -291,8 +291,8 @@ The `default` auth plugin uses the `envoyusers` database (by default) to store a
 Where the `password` field is the `sha1` of the "salt" field concatenated with the user's password e.g. 
 
 ```js
-    > sha1('monkey' + 'password')
-    '9ef16a44310564ecd1b6894c46d93c58281b07af'
+> sha1('monkey' + 'password')
+'9ef16a44310564ecd1b6894c46d93c58281b07af'
 ```
 
 Additional plugins can be selected using the `ENVOY_AUTH` environment variable. e.g. a value of "couchdb_user" will use the CouchDB "_users" database.
