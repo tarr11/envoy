@@ -50,7 +50,7 @@ Cloudant Envoy is essentially performing a filtered replication under the hood (
 Cloudant Envoy is published to npm. It can be installed and run if you have Node.js and npm installed:
 
 ```sh
-npm install -g envoy
+npm install -g cloudant-envoy
 export COUCH_HOST='https://key:passwd@account.cloudant.com'
 envoy
 ```
