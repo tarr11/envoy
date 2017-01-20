@@ -43,7 +43,7 @@
     "istanbul": "^0.4.3",
     "jshint": "2.9.4",
     "mocha": "3.2.0",
-    "pouchdb": "^6.0.6",
+    "pouchdb": "6.1.0",
     "pouchdb-envoy": "^0.6.0"
   },
   "repository": {
