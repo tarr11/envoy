@@ -38,7 +38,6 @@ Cloudant Envoy is essentially performing a filtered replication under the hood (
 
 ### TODO / known limitations
 
- * attachment support
  * multipart requests
  * document ownership is non-transferable (essentially the same as db per user)
  * _design documents cannot be created through the proxy (they will get saved as normal documents)
@@ -62,8 +61,6 @@ Deploy *Cloudant Envoy* to Bluemix by clicking the **Deploy to Bluemix** button 
 [![Deploy to Bluemix](https://deployment-tracker.mybluemix.net/stats/34c200255dfd02ea539780bb433da951/button.svg)](https://bluemix.net/deploy?repository=https://github.com/cloudant-labs/envoy)
 
 **Don't have a Bluemix account?** If you haven't already, you'll be prompted to sign up for a Bluemix account when you click the button.  Sign up, verify your email address, then return here and click the the **Deploy to Bluemix** button again. Your new credentials let you deploy to the platform and also to code online with Bluemix and Git. If you have questions about working in Bluemix, find answers in the [Bluemix Docs](https://www.ng.bluemix.net/docs/).
-
-**Note**:some CouchDB features which are not yet in an official release. A Cloudant account attained through Bluemix will by default not be compatible. You will need to request that the account be moved to the Cloudant cluster "Porter" with an email to `support@cloudant.com` stating your account name.
 
 ### Manual installation
 
