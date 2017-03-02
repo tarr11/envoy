@@ -38,3 +38,6 @@ jsconfig.json
 
 # dotenv config
 .env
+
+# test script
+test.sh

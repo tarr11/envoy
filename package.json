@@ -1,6 +1,6 @@
 {
   "name": "cloudant-envoy",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A mobile backend shim to Cloudant",
   "contributors": [
     "Stefan Kruger <stefan.kruger@gmail.com>",
@@ -25,22 +25,22 @@
     "test": "bash scripts/run_couchdb_on_travis.sh; npm run mocha"
   },
   "dependencies": {
-    "async": "^2.1.2",
-    "basic-auth": "^1.0.4",
-    "body-parser": "^1.16.0",
-    "cf-deployment-tracker-client": "^0.1.1",
-    "cfenv": "^1.0.3",
-    "cloudant": "^1.7.0",
+    "async": "^2.1.5",
+    "basic-auth": "^1.1.0",
+    "body-parser": "^1.17.0",
+    "cf-deployment-tracker-client": "^0.1.3",
+    "cfenv": "^1.0.4",
+    "cloudant": "^1.7.1",
     "compression": "^1.6.2",
-    "express": "^4.14.0",
-    "express-session": "^1.14.2",
-    "morgan": "^1.7.0",
-    "request": "^2.78.0",
-    "uuid": "^3.0.0"
+    "express": "^4.15.0",
+    "express-session": "^1.15.1",
+    "morgan": "^1.8.1",
+    "request": "^2.79.0",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "chance": "^1.0.3",
-    "istanbul": "^0.4.3",
+    "chance": "^1.0.6",
+    "istanbul": "^0.4.5",
     "jshint": "2.9.4",
     "mocha": "3.2.0",
     "pouchdb": "6.1.2",
