@@ -43,7 +43,7 @@
     "chance": "^1.0.6",
     "istanbul": "^0.4.5",
     "jshint": "2.9.4",
-    "mocha": "3.3.0",
+    "mocha": "3.4.0",
     "pouchdb": "6.2.0",
     "pouchdb-envoy": "^0.6.0"
   },
